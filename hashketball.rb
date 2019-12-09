@@ -8,6 +8,7 @@ def num_points_scored(sought_player_name)
     end
   end
 end
+
 def shoe_size(sought_player_name)
   game_hash.each do |_place, team|
     team.each do |attribute, data|
@@ -18,16 +19,19 @@ def shoe_size(sought_player_name)
     end
   end
 end
+
 def team_colors(team_name)
   game_hash.each do |place, team|
     return game_hash[place][:colors] if team[:team_name] == team_name
   end
 end
+
 def team_names
   game_hash.collect do |_place, team|
     team[:team_name]
   end
 end
+
 def player_numbers(team_name)
   nums = []
   game_hash.each do |_place, team|
@@ -41,6 +45,7 @@ def player_numbers(team_name)
   end
   nums
 end
+
 def player_stats(sought_player_name)
   new_hash = {}
   game_hash.collect do |place, team|
@@ -56,6 +61,7 @@ def player_stats(sought_player_name)
   end
   new_hash
 end
+
 def big_shoe_rebounds
   biggest_shoe = 0
   num_rebounds = 0
